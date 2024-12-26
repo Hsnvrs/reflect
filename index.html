@@ -2,19 +2,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Self-Awareness Questions</title>
+  <title>End of Year Reflection Questions by ExecDev </title>
   <style>
     body {
+      font-size: 24px;
       font-family: Arial, sans-serif;
       text-align: center;
     }
     #question {
-      font-size: 24px;
+      font-size: 44px;
       margin-bottom: 20px;
     }
     #button {
       padding: 10px 20px;
-      font-size: 18px;
+      font-size: 24px;
       cursor: pointer;
     }
     #counter {
@@ -24,7 +25,7 @@
   </style>
 </head>
 <body>
-  <h1>Self-Awareness Questions</h1>
+  <h1>End of Year Reflection Questions by ExecDev</h1>
   <p id="question"></p>
   <p id="counter">Button pressed: 0 times</p>
   <button id="button">Get a New Question</button>
@@ -74,18 +75,35 @@
       "What specific steps can you take to prioritize your creative spark and nurture your imagination, and how can you incorporate more play and exploration into your daily life?"
     ];
 
-    let currentQuestionIndex = 0;
-    let buttonPressCount = 0;
-
-    document.getElementById("question").innerHTML = questions[currentQuestionIndex];
-    document.getElementById("counter").innerHTML = `Button pressed: ${buttonPressCount} times`;
+     let currentQuestion = 0;
+    let buttonPresses = 0;
 
     document.getElementById("button").addEventListener("click", function() {
-      currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
-      document.getElementById("question").innerHTML = questions[currentQuestionIndex];
-      buttonPressCount++;
-      document.getElementById("counter").innerHTML = `Button pressed: ${buttonPressCount} times`;
+      buttonPresses++;
+      document.getElementById("counter").innerHTML = "Button pressed: " + buttonPresses + " times";
+
+      if (buttonPresses % 5 === 0) {
+        flashRainbow();
+        alert("You have pressed the button " + buttonPresses + " times!");
+      }
+
+      currentQuestion = (currentQuestion + 1) % questions.length;
+      document.getElementById("question").innerHTML = questions[currentQuestion];
     });
+
+    function flashRainbow() {
+      let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+      let intervalId = setInterval(function() {
+        document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      }, 100);
+
+      setTimeout(function() {
+        clearInterval(intervalId);
+        document.body.style.backgroundColor = "";
+      }, 2000);
+    }
+
+    document.getElementById("question").innerHTML = questions[currentQuestion];
   </script>
 </body>
 </html>
