@@ -2,19 +2,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Self-Awareness Questions</title>
+  <title>End of Year Reflection Questions by ExecDev </title>
   <style>
     body {
+      font-size: 24px;
       font-family: Arial, sans-serif;
       text-align: center;
     }
     #question {
-      font-size: 24px;
+      font-size: 44px;
       margin-bottom: 20px;
     }
     #button {
       padding: 10px 20px;
-      font-size: 18px;
+      font-size: 24px;
       cursor: pointer;
     }
     #counter {
@@ -24,7 +25,7 @@
   </style>
 </head>
 <body>
-  <h1>Self-Awareness Questions</h1>
+  <h1>End of Year Reflection Questions by ExecDev</h1>
   <p id="question"></p>
   <p id="counter">Button pressed: 0 times</p>
   <button id="button">Get a New Question</button>
@@ -60,4 +61,49 @@
       "What are the self-criticisms or negative self-statements that you've been repeating to yourself, and how can you challenge and reframe these thoughts to cultivate a more positive and supportive inner dialogue?",
       "As you reflect on the moments that have left an indelible mark on your soul, what specific actions or decisions did you take that led to these experiences, and how can you apply those same principles to future challenges?",
       "How have you been using the lessons you've learned about yourself and your place in the world to inform your relationships and interactions with others, and what opportunities do you see for further growth and development in this area?",
-      "In what ways have you been prioritizing your own needs and desires in your relationships, and how can you continue to communicate your boundaries and expectations effectively
+      "In what ways have you been prioritizing your own needs and desires in your relationships, and how can you continue to communicate your boundaries and expectations effectively to others?",
+      "What self-care practices have you found to be most effective in managing stress and promoting overall well-being, and how can you incorporate these practices into your daily routine?",
+      "How have you been cultivating a sense of spiritual growth or connection to something greater than yourself, and what role do you see this playing in your life moving forward?",
+      "What specific steps can you take to break through limitations and unlock your full potential in your business or professional life, and what support systems do you need to put in place to help you achieve your goals?",
+      "In what ways have you been living in alignment with your core values and principles, and what areas do you see for improvement or growth in this regard?",
+      "How have you been defining and pursuing your legacy, and what impact do you hope to have on the world through your work and relationships?",
+      "What mindset shifts or practices have you found to be most effective in cultivating a sense of abundance and gratitude, and how can you continue to apply these principles in your daily life?",
+      "How have you been reframing or rewriting the stories you tell yourself about your life, and what impact has this had on your relationships and overall well-being?",
+      "What specific actions or decisions can you take to let go of things that no longer serve you and make space for new experiences and relationships, and what support systems do you need to put in place to help you through this process?",
+      "How have you been applying the lessons you've learned from taking risks and facing challenges, and what opportunities do you see for further growth and development in this area?",
+      "In what ways have you been comparing yourself to others, and what practices can you adopt to focus on your own unique journey and celebrate your successes?",
+      "What specific steps can you take to prioritize your creative spark and nurture your imagination, and how can you incorporate more play and exploration into your daily life?"
+    ];
+
+     let currentQuestion = 0;
+    let buttonPresses = 0;
+
+    document.getElementById("button").addEventListener("click", function() {
+      buttonPresses++;
+      document.getElementById("counter").innerHTML = "Button pressed: " + buttonPresses + " times";
+
+      if (buttonPresses % 5 === 0) {
+        flashRainbow();
+        alert("You have pressed the button " + buttonPresses + " times!");
+      }
+
+      currentQuestion = (currentQuestion + 1) % questions.length;
+      document.getElementById("question").innerHTML = questions[currentQuestion];
+    });
+
+    function flashRainbow() {
+      let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+      let intervalId = setInterval(function() {
+        document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      }, 100);
+
+      setTimeout(function() {
+        clearInterval(intervalId);
+        document.body.style.backgroundColor = "";
+      }, 2000);
+    }
+
+    document.getElementById("question").innerHTML = questions[currentQuestion];
+  </script>
+</body>
+</html>
