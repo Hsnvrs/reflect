@@ -56,7 +56,7 @@
       "What are the parts of yourself that you've been trying to hide or suppress, and how can you practice self-acceptance and self-compassion to integrate these aspects into your whole self?",
       "In what ways have you been seeking external validation or approval, and how can you cultivate a sense of inner validation and self-worth that is not dependent on external factors?",
       "What are the emotions or sensations in your body that you've been trying to avoid or numb, and how can you practice mindfulness and self-inquiry to better understand and work with these feelings?",
-      "How have you been defining success and happiness, and are these definitions aligned with your true values and desires – if not, how can you redefine success and happiness in a way that feels more authentic and fulfilling?",
+      "How have you been defining success and happiness, and are these definitions aligned with your true values and desires – if so, how can you redefine success and happiness in a way that feels more authentic and fulfilling?",
       "What are the self-criticisms or negative self-statements that you've been repeating to yourself, and how can you challenge and reframe these thoughts to cultivate a more positive and supportive inner dialogue?"
     ];
 
@@ -64,6 +64,7 @@
     let buttonPressCount = 0;
 
     document.getElementById("question").innerHTML = questions[currentQuestionIndex];
+    document.getElementById("counter").innerHTML = `Button pressed: ${buttonPressCount} times`;
 
     document.getElementById("button").addEventListener("click", function() {
       currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
