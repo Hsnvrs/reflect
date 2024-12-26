@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Self-Awareness Questions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #question {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    #button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Self-Awareness Questions</h1>
+  <p id="question"></p>
+  <button id="button">Get a New Question</button>
+
+  <script>
+    const questions = [
+      "As you look back on the past year, what are the moments that have left an indelible mark on your soul, and how have they shaped you into the person you are today?",
+      "What is the most significant lesson you've learned about yourself and your place in the world, and how will you apply this wisdom in the year to come?",
+      "In what ways have you been living someone else's dream or expectation, and what steps can you take to reclaim your authentic path and align with your deepest desires?",
+      "How have your relationships evolved over the past year, and what intentions do you want to set for nurturing and deepening your connections with loved ones, colleagues, and community in the year ahead?",
+      "What self-care practices have you neglected or overlooked, and how can you prioritize your physical, emotional, and mental well-being to cultivate a sense of wholeness and resilience?",
+      "What is the most profound way you've experienced spiritual growth or a sense of connection to something greater than yourself, and how can you continue to nurture this aspect of your life?",
+      "In what areas of your business or professional life have you been playing small or holding back, and what bold steps can you take to break through limitations and unlock your full potential?",
+      "What are the values and principles that guide your decisions and actions, and are there any areas where you've compromised or strayed from these core tenets – if so, how can you realign and stay true to yourself?",
+      "As you look to the future, what is the legacy you want to create, and what impact do you hope to have on the world – how can you start taking small, meaningful steps towards realizing this vision?",
+      "In what ways have you been living in a state of scarcity or lack, and how can you shift your mindset to one of abundance, gratitude, and trust that your needs will be met?",
+      "What are the stories or narratives you've been telling yourself about your life, and are there any that no longer serve you – how can you reframe or rewrite these stories to empower and uplift yourself?",
+      "As you stand at the threshold of a new year, what is the one thing you're willing to let go of or release, and what is the one thing you're eager to welcome or invite into your life – what will be the first step you take to make this happen?",
+      "What is the most significant risk you've taken in the past year, and what did you learn from the experience – how can you apply this learning to take even bolder risks in the year ahead?",
+      "In what ways have you been comparing yourself to others, and how can you break free from the cycle of comparison to focus on your own unique journey and celebrate your successes?",
+      "What are the things that bring you the most joy and fulfillment, and how can you prioritize these activities and passions in your daily life to create a sense of purpose and delight?",
+      "How have you been taking care of your creative spark, and what practices can you adopt to nurture your imagination and inspire new ideas and innovations?",
+      "What are the relationships in your life that drain your energy, and how can you set healthy boundaries or distance yourself from these relationships to protect your well-being?",
+      "In what ways have you been living in the past or dwelling on past regrets, and how can you release these burdens to focus on the present moment and create a brighter future?",
+      "What is the most important conversation you've been putting off or avoiding, and what will it take for you to have this conversation and clear the air – what will be the benefits of having this conversation?",
+      "How have you been embracing uncertainty and ambiguity, and what practices can you adopt to cultivate a sense of curiosity and openness in the face of unknown challenges and opportunities?",
+      "What are the things that you've been putting off until 'someday,' and how can you start taking small steps towards making these dreams a reality – what will be the first step you take to make progress on these goals?",
+      "In what ways have you been prioritizing productivity and busyness over rest and relaxation, and how can you find a healthier balance between work and play to avoid burnout and cultivate sustainability?",
+      "What are the parts of yourself that you've been trying to hide or suppress, and how can you practice self-acceptance and self-compassion to integrate these aspects into your whole self?",
+      "In what ways have you been seeking external validation or approval, and how can you cultivate a sense of inner validation and self-worth that is not dependent on external factors?",
+      "What are the emotions or sensations in your body that you've been trying to avoid or numb, and how can you practice mindfulness and self-inquiry to better understand and work with these feelings?",
+      "How have you been defining success and happiness, and are these definitions aligned with your true values and desires – if not, how can you redefine success and happiness in a way that feels more authentic and fulfilling?",
+      "What are the self-criticisms or negative self-statements that you've been repeating to yourself, and how can you challenge and reframe these thoughts to cultivate a more positive and supportive inner dialogue?"
+    ];
+
+    let currentQuestionIndex = 0;
+
+    document.getElementById("question").innerHTML = questions[currentQuestionIndex];
+
+    document.getElementById("button").addEventListener("click", function() {
+      currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+      document.getElementById("question").innerHTML = questions[currentQuestionIndex];
+    });
+  </script>
+</body>
+</html>
