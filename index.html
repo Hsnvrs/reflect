@@ -2,27 +2,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Year End Reflection Questions</title>
+  <title>Self-Awareness Questions</title>
   <style>
     body {
-      font-size: 28px;
       font-family: Arial, sans-serif;
       text-align: center;
     }
     #question {
-      font-size: 44px;
+      font-size: 24px;
       margin-bottom: 20px;
     }
     #button {
       padding: 10px 20px;
-      font-size: 28px;
+      font-size: 18px;
       cursor: pointer;
+    }
+    #counter {
+      font-size: 18px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Year End Reflection Questions</h1>
+  <h1>Self-Awareness Questions</h1>
   <p id="question"></p>
+  <p id="counter">Button pressed: 0 times</p>
   <button id="button">Get a New Question</button>
 
   <script>
@@ -57,12 +61,15 @@
     ];
 
     let currentQuestionIndex = 0;
+    let buttonPressCount = 0;
 
     document.getElementById("question").innerHTML = questions[currentQuestionIndex];
 
     document.getElementById("button").addEventListener("click", function() {
       currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
       document.getElementById("question").innerHTML = questions[currentQuestionIndex];
+      buttonPressCount++;
+      document.getElementById("counter").innerHTML = `Button pressed: ${buttonPressCount} times`;
     });
   </script>
 </body>
